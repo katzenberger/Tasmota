@@ -57,15 +57,15 @@
 #endif
 
 // Number of maximum high/Low changes per packet.
-// We can handle up to (unsigned long) => 32 bit * 2 H/L changes per bit + 2 for sync
+// We can handle up to (unsigned long) => 40 bit * 2 H/L changes per bit + 2 for sync + 2 for second header
 // Для keeloq нужно увеличить RCSWITCH_MAX_CHANGES до 23+1+66*2+1=157
-#define RCSWITCH_MAX_CHANGES 67        // default 67
+#define RCSWITCH_MAX_CHANGES 84        // default 84
 
 // separationLimit: minimum microseconds between received codes, closer codes are ignored.
 // according to discussion on issue #14 it might be more suitable to set the separation
 // limit to the same time as the 'low' part of the sync signal for the current protocol.
 // should be set to the minimum value of pulselength * the sync signal
-#define RCSWITCH_SEPARATION_LIMIT 4100
+#define RCSWITCH_SEPARATION_LIMIT 5200
 
 class RCSwitch {
 
@@ -133,6 +133,8 @@ class RCSwitch {
         HighLow Preamble;
         uint8_t HeaderFactor;
         HighLow Header;
+        uint8_t SecondHeaderFactor;
+        HighLow SecondHeader;
 
         HighLow zero;
         HighLow one;

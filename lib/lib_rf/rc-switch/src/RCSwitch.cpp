@@ -154,7 +154,7 @@ static const RCSwitch::Protocol PROGMEM proto[] = {
   { 340,  0, { 0, 0 }, 1, {  14,  4 }, 0, { 0, 0 }, { 1,  2 }, { 2, 1 }, false,  0 },  // 33 (Dooya Control DC2708L)
   { 120,  0, { 0, 0 }, 1, {   1, 28 }, 0, { 0, 0 }, { 1,  3 }, { 3, 1 }, false,  0 },   // 34 DIGOO SD10 - so as to use this protocol RCSWITCH_SEPARATION_LIMIT must be set to 2600
   { 20,   0, { 0, 0 }, 1, { 239, 78 }, 0, { 0, 0 }, {20, 35 }, {35, 20}, false, 10000 }, // 35 Dooya 5-Channel blinds remote DC1603
-  { 370,  0, { 0, 0 }, 1, {  2,  30 }, 1, {10, 4 }, { 1,  2 }, { 2, 1 }, false,  0 },  // 36 (DC169)
+  { 360,  0, { 0, 0 }, 1, {  2,  32 }, 1, {13, 4 }, { 1,  2 }, { 2, 1 }, false,  0 },  // 36 (DC169)
 
 };
 
